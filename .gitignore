@@ -1,5 +1,6 @@
-cookie-landing/node_modules/
-cookie-landing/dist/
+.astro/
+node_modules/
+dist/
 *.log
 .DS_Store
 Thumbs.db
