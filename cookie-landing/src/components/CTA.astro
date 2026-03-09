@@ -1,0 +1,14 @@
+---
+const whatsappBase = 'https://wa.me/54911XXXXXXXX';
+const defaultMessage = encodeURIComponent('Hola, quiero pedir galletitas.');
+const whatsappLink = `${whatsappBase}?text=${defaultMessage}`;
+---
+
+<section class="section section--cta" aria-labelledby="cta-title">
+  <div class="container cta-box">
+    <h2 id="cta-title">Horneamos tandas cada semana. Consulta disponibilidad.</h2>
+    <a class="btn btn--primary" href={whatsappLink} target="_blank" rel="noreferrer">
+      Pedir por WhatsApp
+    </a>
+  </div>
+</section>

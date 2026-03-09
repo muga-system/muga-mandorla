@@ -1,0 +1,30 @@
+---
+const whatsappBase = 'https://wa.me/54911XXXXXXXX';
+const defaultMessage = encodeURIComponent('Hola, quiero pedir galletitas.');
+const whatsappLink = `${whatsappBase}?text=${defaultMessage}`;
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div class="hero__content">
+      <p class="eyebrow">Casa de galletitas artesanales</p>
+      <h1 id="hero-title">Galletitas artesanales hechas en Buenos Aires</h1>
+      <p class="hero__subtitle">Ingredientes simples. Horneadas cada semana.</p>
+      <a class="btn btn--primary" href={whatsappLink} target="_blank" rel="noreferrer">
+        Pedir por WhatsApp
+      </a>
+    </div>
+
+    <figure class="hero__media">
+      <img
+        src="/images/hero-cookies.webp"
+        alt="Bandeja con galletitas artesanales recién horneadas"
+        width="900"
+        height="700"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </figure>
+  </div>
+</section>
