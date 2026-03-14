@@ -1,24 +1,32 @@
 ---
-const whatsappBase = 'https://wa.me/54911XXXXXXXX';
-const defaultMessage = encodeURIComponent('Hola, quiero pedir galletitas.');
+const whatsappBase = 'https://wa.me/5491153154614';
+const defaultMessage = encodeURIComponent('Hola, quiero pedir productos de pastelería.');
 const whatsappLink = `${whatsappBase}?text=${defaultMessage}`;
 ---
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="container hero__grid">
     <div class="hero__content">
-      <p class="eyebrow">Casa de galletitas artesanales</p>
-      <h1 id="hero-title">Galletitas artesanales hechas en Buenos Aires</h1>
-      <p class="hero__subtitle">Ingredientes simples. Horneadas cada semana.</p>
-      <a class="btn btn--primary" href={whatsappLink} target="_blank" rel="noreferrer">
-        Pedir por WhatsApp
-      </a>
+      <p class="eyebrow">Mandorla Bakery</p>
+      <h1 id="hero-title">Pastelería artesanal para cada ocasión</h1>
+      <p class="hero__intro">
+        Preparamos macarons, brownies, alfajores, tortas y galletitas en tandas semanales. Escribinos
+        por WhatsApp y te contamos disponibilidad, opciones y tiempos de entrega.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href={whatsappLink} target="_blank" rel="noreferrer">
+          Pedir por WhatsApp
+        </a>
+        <a class="btn btn--secondary" href="/Carta%20Mandorla.pdf" target="_blank" rel="noreferrer">
+          Ver carta
+        </a>
+      </div>
     </div>
 
     <figure class="hero__media">
       <img
-        src="/images/hero-cookies.webp"
-        alt="Bandeja con galletitas artesanales recién horneadas"
+        src="/portada.webp"
+        alt="Mesa con productos de pastelería artesanal"
         width="900"
         height="700"
         loading="eager"

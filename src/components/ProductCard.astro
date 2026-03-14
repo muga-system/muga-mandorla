@@ -2,15 +2,14 @@
 interface Props {
   name: string;
   description: string;
-  price: string;
   image: string;
   alt: string;
 }
 
-const { name, description, price, image, alt } = Astro.props;
+const { name, description, image, alt } = Astro.props;
 
-const whatsappBase = 'https://wa.me/54911XXXXXXXX';
-const text = encodeURIComponent(`Hola, quiero pedir galletitas de ${name}.`);
+const whatsappBase = 'https://wa.me/5491153154614';
+const text = encodeURIComponent(`Hola, quiero pedir ${name}.`);
 const whatsappLink = `${whatsappBase}?text=${text}`;
 ---
 
@@ -21,7 +20,6 @@ const whatsappLink = `${whatsappBase}?text=${text}`;
     <h3>{name}</h3>
     <p>{description}</p>
     <div class="product-card__footer">
-      <span class="price">{price}</span>
       <a class="btn btn--secondary" href={whatsappLink} target="_blank" rel="noreferrer">Pedir</a>
     </div>
   </div>

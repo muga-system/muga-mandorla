@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import SectionIntro from '../components/SectionIntro.astro';
 import ProductCard from '../components/ProductCard.astro';
 import HowToOrder from '../components/HowToOrder.astro';
 import Testimonials from '../components/Testimonials.astro';
@@ -9,54 +8,49 @@ import CTA from '../components/CTA.astro';
 
 const products = [
   {
-    name: 'Chocolate intenso',
-    description: 'Cacao amargo, centro suave y bordes crocantes.',
-    price: '$5.800 / docena',
-    image: '/images/product-chocolate.webp',
-    alt: 'Galletitas de chocolate intenso sobre tabla de madera'
+    name: 'Macarons surtidos',
+    description: 'Caja variada con rellenos de ganache, frutos rojos y limón.',
+    image: '/macaronsDos.webp',
+    alt: 'Macarons artesanales de colores sobre bandeja de pastelería'
   },
   {
-    name: 'Avena y miel',
-    description: 'Sabor suave, notas tostadas y dulzor natural.',
-    price: '$5.400 / docena',
-    image: '/images/product-oat-honey.webp',
-    alt: 'Galletitas de avena y miel en plato de ceramica'
+    name: 'Brownies de chocolate',
+    description: 'Miga húmeda, cacao intenso y cubierta crocante.',
+    image: '/brownie.webp',
+    alt: 'Porciones de brownies artesanales sobre plato de cerámica'
   },
   {
-    name: 'Limon',
-    description: 'Aroma citrico, masa tierna y final fresco.',
-    price: '$5.600 / docena',
-    image: '/images/product-lemon.webp',
-    alt: 'Galletitas de limon con ralladura por encima'
+    name: 'Alfajores surtidos',
+    description: 'Tapas suaves, relleno generoso y borde de coco rallado.',
+    image: '/alfajores.webp',
+    alt: 'Alfajores artesanales rellenos con dulce de leche'
   },
   {
-    name: 'Almendras tostadas',
-    description: 'Textura crocante con almendra real y manteca.',
-    price: '$6.100 / docena',
-    image: '/images/product-almond.webp',
-    alt: 'Galletitas de almendras tostadas junto a almendras enteras'
+    name: 'Cookies NY',
+    description: 'Manteca, chocolate y frutos secos en una caja para compartir.',
+    image: '/cookiesdos.webp',
+    alt: 'Caja surtida con galletitas artesanales variadas'
   }
 ];
 ---
 
 <BaseLayout
-  title="Galletitas artesanales en Buenos Aires | Pedidos por WhatsApp"
-  description="Casa de galletitas artesanales en Buenos Aires. Sabores clasicos, tandas semanales y pedidos por WhatsApp."
+  title="Mandorla Bakery | Pedidos por WhatsApp"
+  description="Macarons, brownies, alfajores y especialidades de temporada. Pedidos semanales por WhatsApp."
 >
   <main id="contenido">
     <Hero />
-    <SectionIntro />
 
     <section class="section section--products" aria-labelledby="productos-title">
       <div class="container">
-        <h2 id="productos-title">Sabores de esta semana</h2>
+        <h2 id="productos-title">Especialidades de esta semana</h2>
+        <p>Elegí tus favoritos y pedí por WhatsApp en pocos minutos.</p>
         <div class="products-grid">
           {
             products.map((product) => (
               <ProductCard
                 name={product.name}
                 description={product.description}
-                price={product.price}
                 image={product.image}
                 alt={product.alt}
               />
@@ -73,10 +67,18 @@ const products = [
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>Casa de Galletitas - Buenos Aires, Argentina</p>
-      <a href="https://wa.me/54911XXXXXXXX?text=Hola%2C%20quiero%20pedir%20galletitas." target="_blank" rel="noreferrer">
-        WhatsApp
-      </a>
+      <p>Mandorla Bakery - Buenos Aires, Argentina</p>
+      <div class="footer__links">
+        <a href="https://wa.me/5491153154614?text=Hola%2C%20quiero%20pedir%20productos%20de%20pasteler%C3%ADa." target="_blank" rel="noreferrer">
+          WhatsApp
+        </a>
+        <a href="https://www.instagram.com/mandorla.bakes/" target="_blank" rel="noreferrer">
+          Instagram
+        </a>
+        <a href="/Carta%20Mandorla.pdf" target="_blank" rel="noreferrer">
+          Carta
+        </a>
+      </div>
     </div>
   </footer>
 </BaseLayout>

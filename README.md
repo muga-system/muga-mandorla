@@ -1,6 +1,6 @@
-# Cookie Landing (Astro)
+# Mandorla Bakery - Landing (Astro)
 
-Landing page estatica para una casa de galletitas artesanales en Buenos Aires.
+Landing page estatica para Mandorla Bakery, una marca de pasteleria artesanal.
 
 ## Stack
 
@@ -11,7 +11,7 @@ Landing page estatica para una casa de galletitas artesanales en Buenos Aires.
 ## Estructura
 
 ```text
-cookie-landing/
+.
   public/
     images/
       hero-cookies.webp
@@ -63,12 +63,12 @@ pnpm preview
    - `product-*.webp`: 900x700 (peso ideal < 80 KB)
    - `og-cover.webp`: 1200x630
 2. Mantener los mismos nombres de archivo dentro de `public/images/`.
-3. Si queres cambiar precios o sabores, editar `src/pages/index.astro`.
+3. Si queres cambiar precios o especialidades, editar `src/pages/index.astro`.
 
 ## WhatsApp
 
 - Enlace base: `https://wa.me/54911XXXXXXXX`
-- Mensaje por defecto: `Hola, quiero pedir galletitas.`
+- Mensaje por defecto: `Hola, quiero pedir productos de pasteleria.`
 
 Si queres usar un numero real, reemplazar `54911XXXXXXXX` en:
 

@@ -8,12 +8,21 @@ interface Props {
 }
 
 const {
-  title = 'Galletitas artesanales en Buenos Aires',
-  description = 'Galletitas artesanales hechas en Buenos Aires. Ingredientes simples, tandas semanales y pedidos por WhatsApp.',
+  title = 'Mandorla Bakery | Pastelería artesanal',
+  description = 'Macarons, brownies, alfajores y especialidades de temporada. Pedidos por WhatsApp.',
   ogImage = '/images/og-cover.webp'
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const whatsappLink =
+  'https://wa.me/5491153154614?text=Hola%2C%20quiero%20pedir%20productos%20de%20pasteler%C3%ADa.';
+
+const navLinks = [
+  { label: 'Inicio', href: '#contenido' },
+  { label: 'Especialidades', href: '#productos-title' },
+  { label: 'Cómo pedir', href: '#como-pedir-title' },
+  { label: 'Testimonios', href: '#testimonios-title' }
+];
 ---
 
 <!doctype html>
@@ -36,12 +45,87 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@800&family=Manrope:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#contenido">Mandorla Bakery</a>
+
+        <nav class="nav-desktop" aria-label="Navegación principal">
+          {
+            navLinks.map((link) => (
+              <a href={link.href}>{link.label}</a>
+            ))
+          }
+        </nav>
+
+        <div class="nav-actions">
+          <a
+            class="nav-social-icon"
+            href="https://www.instagram.com/mandorla.bakes/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram de Mandorla Bakery"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M7.25 2h9.5A5.25 5.25 0 0 1 22 7.25v9.5A5.25 5.25 0 0 1 16.75 22h-9.5A5.25 5.25 0 0 1 2 16.75v-9.5A5.25 5.25 0 0 1 7.25 2Zm0 1.5A3.75 3.75 0 0 0 3.5 7.25v9.5a3.75 3.75 0 0 0 3.75 3.75h9.5a3.75 3.75 0 0 0 3.75-3.75v-9.5a3.75 3.75 0 0 0-3.75-3.75h-9.5Zm4.75 3.5a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.25-.9a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"
+              ></path>
+            </svg>
+          </a>
+
+          <a
+            class="nav-social-icon nav-whatsapp-icon nav-cta"
+            href={whatsappLink}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Pedir por WhatsApp"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.4 4.8 5-1.3A9.8 9.8 0 1 0 12 2.2Zm0 17.8c-1.5 0-3-.4-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.3 8.3 0 1 1 12 20Zm4.6-6.2c-.2-.1-1.4-.7-1.6-.7-.2-.1-.3-.1-.5.1l-.7.8c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.7-1-.7-.6-1.1-1.4-1.2-1.6-.1-.2 0-.3.1-.4l.3-.3.2-.3c.1-.1.1-.2.2-.4 0-.1 0-.3 0-.4 0-.1-.5-1.3-.7-1.8-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.3c.1.1 1.5 2.3 3.6 3.2.5.2.9.4 1.2.5.5.2 1 .2 1.4.1.4 0 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.1-.4-.2Z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+
+        <details class="nav-mobile">
+          <summary aria-label="Abrir menú de navegación">Menú</summary>
+          <nav aria-label="Navegación móvil">
+            {
+              navLinks.map((link) => (
+                <a href={link.href}>{link.label}</a>
+              ))
+            }
+            <a href="https://www.instagram.com/mandorla.bakes/" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+            <a class="btn btn--primary" href={whatsappLink} target="_blank" rel="noreferrer">
+              Pedir por WhatsApp
+            </a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
     <slot />
+
+    <script is:inline>
+      const header = document.querySelector('.site-header');
+
+      if (header) {
+        const syncHeaderBorder = () => {
+          header.classList.toggle('is-scrolled', window.scrollY > 0);
+        };
+
+        syncHeaderBorder();
+        window.addEventListener('scroll', syncHeaderBorder, { passive: true });
+      }
+    </script>
   </body>
 </html>
